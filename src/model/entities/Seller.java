@@ -2,106 +2,107 @@ package model.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 
-public class Seller implements Serializable{
+public class Seller implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-		private Integer id;
-		private String name;
-		private String email;
-		private Date birthDate;
-		private Double baseSalary;
-		private Department department;
-		
-		public Seller() {
-		}
 
-		public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
-			this.id = id;
-			this.name = name;
-			this.email = email;
-			this.birthDate = birthDate;
-			this.baseSalary = baseSalary;
-			this.department = department;
-		}
+	private Integer id;
+	private String name;
+	private String email;
+	private Date birthDate;
+	private Double baseSalary;
 
-		public Integer getId() {
-			return id;
-		}
+	private Department department;
 
-		public void setId(Integer id) {
-			this.id = id;
-		}
+	public Seller() {
+	}
 
-		public String getName() {
-			return name;
-		}
+	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.birthDate = birthDate;
+		this.baseSalary = baseSalary;
+		this.department = department;
+	}
 
-		public void setName(String name) {
-			this.name = name;
-		}
+	public Integer getId() {
+		return id;
+	}
 
-		public String getEmail() {
-			return email;
-		}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-		public void setEmail(String email) {
-			this.email = email;
-		}
+	public String getName() {
+		return name;
+	}
 
-		public Date getBirthDate() {
-			return birthDate;
-		}
+	public void setName(String name) {
+		this.name = name;
+	}
 
-		public void setBirthDate(Date birthDate) {
-			this.birthDate = birthDate;
-		}
+	public String getEmail() {
+		return email;
+	}
 
-		public Double getBaseSalary() {
-			return baseSalary;
-		}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-		public void setBaseSalary(Double baseSalary) {
-			this.baseSalary = baseSalary;
-		}
+	public Date getBirthDate() {
+		return birthDate;
+	}
 
-		public Department getDepartment() {
-			return department;
-		}
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
 
-		public void setDepartment(Department department) {
-			this.department = department;
-		}
+	public Double getBaseSalary() {
+		return baseSalary;
+	}
 
-		@Override
-		public int hashCode() {
-			return Objects.hash(id);
-		}
+	public void setBaseSalary(Double baseSalary) {
+		this.baseSalary = baseSalary;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Seller other = (Seller) obj;
+		if (id == null) {
+			if (other.id != null)
 				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Seller other = (Seller) obj;
-			return Objects.equals(id, other.id);
-		}
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
 
-		@Override
-		public String toString() {
-			return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate
-					+ ", baseSalary=" + baseSalary + ", department=" + department + "]";
-		}
-		
-		
-		
-		
-		
-		
-		
+	@Override
+	public String toString() {
+		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+				+ baseSalary + ", department=" + department + "]";
+	}
 }
